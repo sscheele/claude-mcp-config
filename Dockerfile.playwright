@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/playwright/mcp:latest
+
+# Install Firefox dependencies for GUI support
+USER root
+RUN apt-get update && apt-get install -y \
+    libxcursor1 \
+    libgtk-3-0 \
+    libgdk-pixbuf2.0-0 \
+    libcairo-gobject2 \
+    libpangocairo-1.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to the default user
+USER pwuser
+
+# Set working directory
+WORKDIR /home/pwuser

@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--init",
+        "-v",
+        "/home/sam/.local/share/playwright-mcp:/home/pwuser/.local/share/ms-playwright",
+        "-v",
+        "/home/sam/Projects/claude-assist/playwright-browser-state:/home/pwuser/.cache/ms-playwright/mcp-chromium-profile",
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-e",
+        "DISPLAY",
+        "--entrypoint",
+        "node",
+        "playwright-mcp-firefox:local",
+        "cli.js",
+        "--browser",
+        "firefox"
+      ],
+      "env": {}
+    }
+  }
+}

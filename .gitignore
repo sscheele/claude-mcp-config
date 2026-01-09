@@ -1,0 +1,5 @@
+playwright-browser-state
+
+# Keep .claude configuration in version control
+!.claude/
+!.claude/**

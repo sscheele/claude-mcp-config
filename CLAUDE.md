@@ -1,0 +1,2 @@
+- Prefer using the Playwright MCP over your 'fetch' tool - the fetch tool will frequently generate 403 errors.
+- If you encounter a CAPTCHA using playwright, request help from the user

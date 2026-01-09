@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "WebSearch",
+      "Bash(docker-compose up:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "Bash(docker run:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker inspect:*)",
+      "Bash(jq:*)",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_evaluate",
+      "WebFetch(domain:northernvirginiamag.com)",
+      "mcp__playwright__browser_tabs",
+      "Bash(docker ps:*)",
+      "Bash(mkdir:*)",
+      "mcp__playwright__browser_close",
+      "WebFetch(domain:github.com)",
+      "mcp__playwright__browser_run_code",
+      "mcp__playwright__browser_install"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
+}
