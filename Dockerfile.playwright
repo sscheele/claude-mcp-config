@@ -8,10 +8,18 @@ RUN apt-get update && apt-get install -y \
     libgdk-pixbuf2.0-0 \
     libcairo-gobject2 \
     libpangocairo-1.0-0 \
+    libpci3 \
+    libegl1 \
+    libegl1-mesa \
+    dbus-x11 \
     && rm -rf /var/lib/apt/lists/*
 
-# Switch back to the default user
-USER pwuser
+# Install Firefox browser using playwright (must use node direct path)
+WORKDIR /app
+RUN node node_modules/playwright/cli.js install firefox
 
-# Set working directory
-WORKDIR /home/pwuser
+# Switch to node user (default user in base image, UID 1000)
+USER node
+
+# Set working directory to /app where cli.js is located
+WORKDIR /app
